@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Basics</title>
+    <script src="jquery-1.12.3.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to LISTR</h1>
+    <input id="display">
+<button id="add-task">Add Task</button>
+    <ul id="todo-list">
+      <li>buy bananas</li>
+      <li>buy crocs</li>
+      <li>buy sandals</li>
+    </ul>
+    <script type="text/javascript">
+
+    var myH1 = $('h1');
+    var myUl = $('#todo-list');
+    var myLi = $('li');
+    var addTask = $('#add-task');
+    var myInput = $('#display');
+
+    myH1.css('color','tomato')
+    myUl.css('color','blue')
+
+    myLi.on('click', function(){
+      $(this).css('text-decoration', 'line-through');
+
+  });
+
+    addTask.on('click', function(){
+      myUl.append('<li>' + myInput.val() + '</li>')
+      myInput.val("")
+
+    })
+
+$('li button').on('click', function(){
+  $(this).parent().remove()
+})
+
+    // console.log(this.hide()); // wont work cause is not a jQuery element
+
+    </script>
+  </body>
+</html>
